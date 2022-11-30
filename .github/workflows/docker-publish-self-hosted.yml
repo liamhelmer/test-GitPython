@@ -1,0 +1,32 @@
+---
+
+name: Run Test Python Program
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  push:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+
+      - run: |
+         pip install distro
+         python main.py
+         ls -laR my_new_repo
+         echo "Change is as follows:"
+         diff -u main.py.old main.py
+         echo "So long, and thanks..... for all the fish."

@@ -9,6 +9,6 @@ for branch in repo.branches:
 
 
 # Provide a list of the files to stage
-repo.index.add(['../main.py'])
+repo.index.add(['main.py'])
 # Provide a commit message
 repo.index.commit('Initial commit')
