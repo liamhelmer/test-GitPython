@@ -28,5 +28,5 @@ jobs:
          python main.py
          ls -laR my_new_repo
          echo "Change is as follows:"
-         diff -u main.py.old main.py
+         diff -u main.py.old main.py || true
          echo "So long, and thanks..... for all the fish."
